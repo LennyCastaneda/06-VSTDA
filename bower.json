@@ -1,0 +1,29 @@
+{
+  "name": "06-VSTDA",
+  "homepage": "https://github.com/LennyCastaneda/06-VSTDA",
+  "authors": [
+    "Lenny Castaneda <lenny.castaneda@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7"
+  }
+}
