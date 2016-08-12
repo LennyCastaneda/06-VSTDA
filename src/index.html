@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	  <meta charset="UTF-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  <title>To Do List AngularJS</title>
 		
 		<!-- bower:css -->
@@ -15,93 +15,98 @@
 		<!-- endinject -->
 
 		<!-- inject:css -->
+		<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 	 	<link rel="stylesheet" href="css/normalize.min.css">
-		<link rel="stylesheet" href="css/styles.css">
-		<!-- endinject -->
+	 	<link rel="stylesheet" href="css/styles.css">
+	 	<!-- endinject -->
 
 	</head>
 
 	<body ng-app="todoListApp">
-		<div class="container" id="container" ng-controller="mainCtrl">
+		<div class="wrap">  <!-- Wrapper div to push down the foot to bottom of the view port-->
+			<div class="container" ng-controller="mainCtrl">
+				<!-- App Container -->
+				<div class="form-group lead m-b-3">
 
-			<div class="form-group lead m-b-3">
-				<div class="container" id="">
-					<!-- App Container -->
-					<div class="row" id="todoapp">
 						<!-- Form container -->
-						<!-- Added ng-submit="addTodo()" here so that we can use the required class function to check for input validation.-->
-						<form ng-submit="addTodo()" class="col-sm-3  col-xs-12" style="border: 4px solid #d9edf7; margin-bottom: 20px;">
-							<div class="form-group" style="margin-top: 20px" id="title-bkgrd">
-								<div class="well" style="background-color: #d9edf7">
-									<h1>Add Todo Item</h1>
-								</div>
-							</div>
-							<div class="form-group">
-								<!-- Input Area -->	
-								<label>Text</label>
-								<!-- The ng-model directive says bind the value in this input to an object in the scope. ng-model allows to constantly update variables in the scope as the input is changed by the user. todo needs to store multiple values so we created todo.task, which todo is the object that stores values of this input on the 'task' key-->
-								<!-- added required class function to the option select to make sure a user types in a text input before the function addTodo() is called-->
-								<input class="form-control form-control-lg" required type="text" ng-model="blankTodo.task">
-							</div>
-							<!-- Priority Selector -->
-							 <div class="form-group" class="form-control form-control-lg">
-								<label for="priority">Priority</label>
-								<!-- added required class function to the option select to make sure a user selects an option before the function addTodo() is called-->
-								<select id="prioritySelect" required class="form-control" ng-model="blankTodo.priority">
-									<option value="">Select Priority</option>
-									<option class="list-group-item list-group-item-danger" value='3'>Low Priority</option>
-									<option class="list-group-item list-group-item-info" value='2'>Medium Priority</option>
-									<option class="list-group-item list-group-item-warning" value='1'>High Prioirty</option>
-								</select>
-			    			</div>
-			    			<div  class="well" style="background-color: #d9edf7">
-				    			<button type="submit" class="btn btn-primary" >Add Todo</button>
-			    			</div> <!-- Priority Selector -->
-						</form> <!-- Form container -->
-						
-						<div class="container">
-							<div class="row">
-								<div class="col-sm-2 col-md-3" style="margin-bottom: 10px;">
-									<button type="submit" class="btn btn-primary" ng-click="taskPriority = '+priority';">Order by highest priority</button>
-								</div>
-								<div class="col-sm-2 col-md-3" style="margin-bottom: 10px;">
-									<button type="submit" class="btn btn-primary" ng-click="taskPriority = '-priority';">Order by lowest priority</button>
-								</div>
-								<div class="col-sm-2" style="margin-bottom: 10px;">
-									<button type="submit" class="btn btn-primary" ng-click="taskPriority = 'task';">Order alphabetically</button>
-								</div>	
+						<div class="row" id="todoapp">
+							<!-- Added ng-submit="addTodo()" here so that we can use the required class function to check for input validation.-->
+							<form ng-submit="addTodo()" class="col-sm-3  col-xs-12" style="border: 4px solid #d9edf7; margin-bottom: 20px;">
+								<!-- Title div -->	
+								<div class="form-group" style="margin-top: 20px" id="title-bkgrd">
+									<div class="well" style="background-color: #d9edf7">
+										<h1 class="text-shadow">Add Todo Item</h1>
+									</div>
+								</div>	<!-- Title div -->	
+								<!-- Text input Area -->	
+								<div class="form-group">	
+									<label>Text</label>
+									<!-- The ng-model directive says bind the value in this input to an object in the scope. ng-model allows to constantly update variables in the scope as the input is changed by the user. todo needs to store multiple values so we created todo.task, which todo is the object that stores values of this input on the 'task' key-->
+									<!-- added required class function to the option select to make sure a user types in a text input before the function addTodo() is called-->
+									<input class="form-control form-control-lg" required type="text" ng-model="blankTodo.task">
+								</div>	<!-- Text input Area -->	
+								<!-- Priority Selector -->
+								 <div class="form-group" class="form-control form-control-lg">
+									<label for="priority">Priority</label>
+									<!-- added required class function to the option selections to make sure a user selects an option before the function addTodo() is called or else a warning pops up to tell user to enter fill out the field.-->
+									<select id="prioritySelect" required class="form-control" ng-model="blankTodo.priority">
+										<option value="">Select Priority</option>
+										<option class="list-group-item list-group-item-danger" value='3'>Low Priority</option>
+										<option class="list-group-item list-group-item-info" value='2'>Medium Priority</option>
+										<option class="list-group-item list-group-item-warning" value='1'>High Prioirty</option>
+									</select>
+				    			</div>	<!-- Priority Selector -->
+				    			<div  class="well" style="background-color: #d9edf7">
+					    			<button type="submit" class="btn btn-primary" >Add Todo</button>
+				    			</div> <!-- Todo Button -->
+							</form> <!-- Form container -->
 
-								<div class="container col-sm-8 col-md-8  text-center">
-									<!-- List Area -->
-										<ul class="list-group" id="list-items" ng-repeat="todo in todos | orderBy:taskPriority">
-										<!-- created an ng-class that takes the list-group-item colors from bootstrap to set CSS classes on an HTML element by databinding an expression that represents all classes to be added to the todo item task color. -->
-											<li class="list-group-item" ng-class="{	
-																					'list-group-item-danger' : todo.priority === '1',
-																					'list-group-item-info' : todo.priority === '2',
-																					'list-group-item-warning' : todo.priority === '3'
-																					}">
-																					{{todo.task}}
-											</li>
-										</ul>
-								</div> 
-							</div> <!-- row class -->
-						</div> <!-- container class -->	
+								<div class="container">
+									<div class="row">
+										<div class="col-sm-2 col-md-3" style="margin-bottom: 10px;">
+											<button type="submit" class="btn btn-primary" ng-click="taskPriority = '+priority';">Order by highest priority</button>
+										</div>
+										<div class="col-sm-2 col-md-3" style="margin-bottom: 10px;">
+											<button type="submit" class="btn btn-primary" ng-click="taskPriority = '-priority';">Order by lowest priority</button>
+										</div>
+										<div class="col-sm-2" style="margin-bottom: 10px;">
+											<button type="submit" class="btn btn-primary" ng-click="taskPriority = 'task';">Order alphabetically</button>
+										</div>	
 
-						</div>  <!-- form-group class -->
+										<div class="container col-sm-8 col-md-8 text-center" style="margin: auto">
+											<!-- List Area -->
+												<ul class="list-group" id="list-items" ng-repeat="todo in todos | orderBy:taskPriority">
+												<!-- created an ng-class that takes the list-group-item colors from bootstrap to set CSS classes on an HTML element by databinding an expression that represents all classes to be added to the todo item task color. -->
+													<li class="list-group-item" ng-class="{	
+																							'list-group-item-danger' : todo.priority === '1',
+																							'list-group-item-info' : todo.priority === '2',
+																							'list-group-item-warning' : todo.priority === '3'
+																							}">
+																							{{todo.task}}   <!--one way data binding using the {{}} bindings 'mustache brackets' -->
+													</li>
+												</ul>
+										</div> <!-- Priority button container -->
 
-					</div> <!-- row class -->
+									</div> <!-- Button Row class -->
+								</div> <!-- Button container class -->	
 
-					<!-- <pre>{{blankTodo | json}}</pre> -->  <!-- To preview the code in real time -->
-					<!-- <pre>{{todos | json}}</pre>  --><!-- To preview the code in real time -->
-				</div> <!-- row class -->
-			</div> <!-- form-group container - ng-controller div-->
-		</div> <!-- main container class with dummy h1 tags for top spacing -->	
+						</div>  <!-- Form-group row class -->
 
-        <div class="container lead text-center">
-            <footer class="footer">
-                <p>&copy; 2016 Lenny Castaneda</p>
-            </footer>
-        </div>
+						<!-- <pre>{{blankTodo | json}}</pre> -->  <!-- To preview the code in real time -->
+						<!-- <pre>{{todos | json}}</pre>  --><!-- To preview the code in real time -->
+
+				</div> <!-- App contianer-->
+			</div> <!-- MainCtrl ng-controller div -->
+		</div> <!-- Wrap class that pushea down footer -->	
+		
+		<!-- Footer div -->
+		<div class="sticky-div"></div>
+		
+		<div class="container">
+			<footer class="footer">
+				<p>&copy; 2016 Lenny Castaneda</p>
+			</footer>
+		</div>	
 
 		<!-- bower:js -->
 		<script src="bower_components/angular/angular.js"></script>
@@ -111,7 +116,6 @@
 
 		<!-- inject:js -->
 		<script src="js/app.js"></script>
-		<script src="js/watch.js"></script>
 		<!-- endinject -->
 	</body>
 </html>

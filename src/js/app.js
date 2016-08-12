@@ -20,18 +20,10 @@ angular
     		var copyOfBlankTodo = angular.copy($scope.blankTodo); 
     		//Then take the copyOfBlankTodo as an argument to the core .push function and push that object into the todos[] array
     		$scope.todos.push(copyOfBlankTodo);  
-    		// $scope.todos.push(angular.copy($scope.blankTodo)); //a Shorthand way of pushing this object into the todos[] array
+    		// $scope.todos.push(angular.copy($scope.blankTodo)); //<----a Shorthand way of pushing this object into the todos[] array
     		$scope.taskPriority = angular.taskPriority;
     		//Aftet the addTodo button function is fired and a new task with priority is added to the list, then this $scope's blankTodo object is cleared with a blank object ready for user to enter a new task.
     		$scope.blankTodo={};
     	};
-  //   	function testCtrl($scope) {
-		// $scope.$watch('blankTodo.priority', function () {
-  //           if (angular.isDefined($scope.blankTodo.priority === '')
-  //               ) {
-  //              alert("Please choose a priority.");
-  //           	}
-		// 	});
-		// }
 });
 
