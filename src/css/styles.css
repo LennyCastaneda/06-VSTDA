@@ -51,22 +51,36 @@ a.close {
   float: right;
 }
 
+a {
+  color: #ffffff;
+}
+
 #container {
 	padding:  60px;
 }
 
-.footer, .sticky-div{
+.footer {
 	position: relative;
 	right:  0;
 	bottom:  0;
 	left:  0;
-	padding:  1rem;
-	margin-top: 1px;
+	padding:  .9rem;
+	margin-top: 0px;
 	text-align: center;
 	background: #337ab7;
 	color:  white;
-}  
+} 
 
+.push {
+	height: .5em;
+}
+
+/*Establishes the parameters for sticky footer*/
+.footer, .push {
+	font-size: 1em;
+	clear: both;
+	text-align: center;
+}
 
 .container .col-sm-8 .col-md-8 .text-center {
 	padding-top:  1px;
@@ -130,7 +144,6 @@ input.form-control,input.form-control:focus {
 		display: table;
 		clear: both;
 	}
-
 }
 
 @media (min-width: 1025px) {

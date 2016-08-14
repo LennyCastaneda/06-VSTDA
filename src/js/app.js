@@ -13,7 +13,7 @@ angular
     		task: '',
     		priority: ''
     	};
-
+    	
     	$scope.addTodo = function() {
     		//blank variable is helpful to the human reading it.
     		//Use Angular's core .copy function and take the blankTodo from within the controller's scope and assign it to copyOfBlankTodo variable.

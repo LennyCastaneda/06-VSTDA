@@ -10,8 +10,8 @@
 		<!-- endbower -->
 
 		<!-- inject:bootstrap -->
-<!-- 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<!-- endinject -->
 
 		<!-- inject:css -->
@@ -23,7 +23,7 @@
 	<div class="wrap">  <!-- Wrapper div to push down the foot to bottom of the view port-->
 		<div class="container" ng-controller="mainCtrl">
 			<!-- App Container -->
-			<div class="form-group lead m-b-3">
+			<div class="form-group">
 					<!-- Form container -->
 					<div class="row" id="todoapp">
 						<!-- Added ng-submit="addTodo()" here so that we can use the required class function to check for input validation.-->
@@ -91,15 +91,23 @@
 					<!-- <pre>{{todos | json}}</pre>  --><!-- To preview the code in real time -->
 			</div> <!-- App contianer-->
 		</div> <!-- MainCtrl ng-controller div -->
-	</div> <!-- Wrap class that pushea down footer -->	
+		
+	<!-- Div for sticky footer -->
+	<div class="stick-footer"></div>
+
+</div> <!-- Wrap class that pushea down footer -->		
 	
 	<!-- Footer div -->
-	
-	<div class="">
-		<footer class="footer">
-			<p>&copy; 2016 Lenny Castaneda</p>
-		</footer>
-	</div>	
+	<div class="footer">
+		<br>
+		<span>&copy; Lenny Castaneda</span>
+		<br>
+		<div class="icons">
+			<span><a href="mailto: lenny.castaneda@gmail.com"><img src="img/glyphicons-social-19-gmail.png" alt="Email"></a></span>&nbsp;
+			<span><a href="https://www.linkedin.com/in/lennyjcastaneda"><img src="img/glyphicons-social-18-linked-in.png" alt="LinkedIn"></a></span>&nbsp;
+			<span><a href="https://github.com/LennyCastaneda"><img src="img/glyphicons-gitHub.png" width="29" alt="GitHub"></a></span>&nbsp;	
+		</div>
+	</div>
 
 	<!-- bower:js -->
 	<script src="bower_components/angular/angular.js"></script>
