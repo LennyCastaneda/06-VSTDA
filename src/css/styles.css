@@ -15,15 +15,15 @@ body {
 
 h1 {
 	color: #ffffff;
-	text-shadow: 2px 2px 4px  #041015, 0 0 25px #96cde9;
+	text-shadow: 2px 2px 2px  #041015, 0 0 55px #96cde9;
 }
 
 /* Wrapper for page content to push down footer */
-.wrap {
-  min-height: 100%;
-  height: auto;
+div.wrap {
+  min-height: calc(100vh - 84px);
+/*   min-height: auto; */
   /* Negative indent footer by its height */
-  margin: 40px auto 10px;
+  margin: 25px auto 10px;
   /* Pad bottom by footer height */
   padding: 0 10px 0px;
 }
@@ -56,7 +56,7 @@ a.close {
 }
 
 .footer, .sticky-div{
-	position: absolute;
+	position: relative;
 	right:  0;
 	bottom:  0;
 	left:  0;
@@ -68,9 +68,15 @@ a.close {
 }  
 
 
-.container .col-sm-8 .col-md-8 .ext-center {
+.container .col-sm-8 .col-md-8 .text-center {
 	padding-top:  1px;
 }
+
+.col-sm-8 {
+		width:  24.667%;
+		float: left;
+	}
+
 
 /* ================================= 
   Buttons
@@ -81,8 +87,9 @@ button:hover {
 }
 
 .btn-primary {
-	box-shadow: 2px 2px 4px  #041015, 0 0 25px #96cde9;
-	text-shadow: 2px 2px 2px  #041015, 1px 1px 50px #96cde9;
+	box-shadow: 2px 2px 2px  #041015, 0 0 25px #96cde9;
+	text-shadow: 2px 2px 2px  #041015, 10px 10px 50px #96cde9;
+	margin-bottom: 25px;
 }
 
 input.form-control,input.form-control:focus {
@@ -100,16 +107,20 @@ input.form-control,input.form-control:focus {
   Media Queries
 ==================================== */
 
-@media (min-width: 769px) {
+@media (min-width: 792px) {
 
 	.wrap {
-		min-height: calc(100vh - 89px);
+		min-height: calc(100vh - 54px);
 	}
 
 	.container {
 		width: 80%;
 		max-width: 1150px;
 		margin: 0 auto;
+	}
+	.col-sm-2 {
+		width:  70.667%;
+		float: center;
 	}
 
 	/* ---- Float clearfix ---- */

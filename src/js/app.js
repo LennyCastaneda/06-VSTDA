@@ -26,4 +26,3 @@ angular
     		$scope.blankTodo={};
     	};
 });
-
