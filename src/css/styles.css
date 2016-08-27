@@ -20,7 +20,7 @@ h1 {
 
 /* Wrapper for page content to push down footer */
 div.wrap {
-  min-height: calc(100vh - 84px);
+  min-height: calc(100vh - 98px);
 /*   min-height: auto; */
   /* Negative indent footer by its height */
   margin: 25px auto 10px;
@@ -89,7 +89,7 @@ a {
 .col-sm-8 {
 		width:  24.667%;
 		float: left;
-	}
+}
 
 
 /* ================================= 
@@ -124,7 +124,7 @@ input.form-control,input.form-control:focus {
 @media (min-width: 792px) {
 
 	.wrap {
-		min-height: calc(100vh - 54px);
+		min-height: calc(100vh - 98px);
 	}
 
 	.container {
